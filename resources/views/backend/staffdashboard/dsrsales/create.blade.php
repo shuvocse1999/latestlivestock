@@ -898,7 +898,7 @@
 
 			success:function(response){
 
-				window.open('{{URL::to('/dsreditsales')}}'+'/'+response);
+				window.open('{{URL::to('/editdsrsales')}}'+'/'+response);
 				location.reload();
 
 				$("#loading").hide();

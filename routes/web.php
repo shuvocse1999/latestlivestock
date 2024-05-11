@@ -46,7 +46,7 @@ Route::get("dsrsalescartonupdate/{id}",[StaffDashboardController::class,'dsrsale
 Route::get("dsrsalespieceupdate/{id}",[StaffDashboardController::class,'dsrsalespieceupdate']);
 Route::get("dsrsalespriceupdate/{id}",[StaffDashboardController::class,'dsrsalespriceupdate']);
 Route::post("dsrsalesledger",[StaffDashboardController::class,'dsrsalesledger']);
-Route::get("dsreditsales/{id}",[StaffDashboardController::class,'dsreditsales']);
+Route::get("editdsrsales/{id}",[StaffDashboardController::class,'dsreditsales']);
 Route::get("showeditdsrsalescurrentcart/{invoice_no}",[StaffDashboardController::class,'showeditdsrsalescurrentcart']);
 Route::post("editdsrsalesledger/{invoice_no}",[StaffDashboardController::class,'editdsrsalesledger']);
 
