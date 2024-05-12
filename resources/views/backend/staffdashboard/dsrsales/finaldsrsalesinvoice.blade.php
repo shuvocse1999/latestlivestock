@@ -20,7 +20,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 
   <table class="table table-bordered w-100">
     <tr class="bg-light">
-      <td colspan="11" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold;"><b>{{ $data->shop_name }}<br>{{ $data->shop_number }}<br>Sales Invoice</b><br>DSR: {{ $data->staff_name }}</td> 
+      <td colspan="11" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold;"><b>{{ $data->shop_name }}<br>{{ $data->shop_number }}<br>{{ $data->shop_address }}<br>Sales Invoice</b><br>DSR: {{ $data->staff_name }}</td> 
     </tr>
 
     <tr class="text-center">

@@ -215,6 +215,16 @@
 
 
 
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Shop Info.</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('shop.index')}}">Shop</a></li>
+                          <li><a href="{{ url('shoppayment')}}">Shop Payment</a></li>
+                          <li><a href="{{ url('allshoppayment')}}">Due Payment Lists</a></li>
+                      </ul>
+                  </li>
 
 
 
@@ -222,28 +232,32 @@
 
 
 
-                </ul>
-            </div>
-        </div>
+
+
+
+
+              </ul>
+          </div>
+      </div>
 
 
 
 
 
-        @yield('content')
+      @yield('content')
 
 
 
-    </div>
+  </div>
 
 
-    <script src="{{ asset("backend/admindashboard") }}/plugins/common/common.min.js"></script>
-    <script src="{{ asset("backend/admindashboard") }}/js/custom.min.js"></script>
-    <script src="{{ asset("backend/admindashboard") }}/js/settings.js"></script>
-    <script src="{{ asset("backend/admindashboard/my") }}/select2.min.js"></script>
-    <script src="{{ asset("backend/admindashboard/my") }}/toastr.min.js"></script>
+  <script src="{{ asset("backend/admindashboard") }}/plugins/common/common.min.js"></script>
+  <script src="{{ asset("backend/admindashboard") }}/js/custom.min.js"></script>
+  <script src="{{ asset("backend/admindashboard") }}/js/settings.js"></script>
+  <script src="{{ asset("backend/admindashboard/my") }}/select2.min.js"></script>
+  <script src="{{ asset("backend/admindashboard/my") }}/toastr.min.js"></script>
 
-    <script>
+  <script>
       @if(Session::has('messege'))
       var type="{{Session::get('alert-type','info')}}"
       switch(type){

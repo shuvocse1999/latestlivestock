@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('dsrsales_payment', function (Blueprint $table) {
             $table->id();
             $table->foreignId('staff_id')->constrained('staff')->cascadeOnDelete();
+            $table->string("shop_id");
             $table->string("invoice_no");
             $table->string('payment_date')->nullable();
             $table->double("payment",11,2)->nullable();

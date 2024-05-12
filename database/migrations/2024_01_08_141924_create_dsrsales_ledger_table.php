@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('dsrsales_ledger', function (Blueprint $table) {
             $table->id();
             $table->foreignId('staff_id')->constrained('staff')->cascadeOnDelete();
-            $table->string('shop_name');
+            $table->string('shop_id');
             $table->string('shop_number');
             $table->string('invoice_date');
             $table->string("invoice_no");

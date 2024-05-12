@@ -31,20 +31,25 @@
 							</div>
 
 
-							<div class="form-group col-md-5">
-								<label class="mb-1">Shop Name: <span class="text-danger" style="font-size: 15px;">*</span></label>
-								<input type="text" name="shop_name" class="form-control"  required="" autocomplete="off" required="" value="{{ $sales->shop_name }}">
-								
+
+							<div class="form-group col-md-8">
+								<label class="mb-1">Shop Name: </label>
+								<div class="input-group mb-2">
+									<select class="form-control myselect" name="shop_id" id=
+									"shop_id">
+
+									<option value="">- - - - -</option>
+
+									@foreach($shop as $s)
+									<option value="{{ $s->id }}" @if($s->id == $sales->shop_id) selected="" @endif>{{ $s->shop_name }} - {{ $s->shop_number }}</option>
+									@endforeach
+
+
+								</select>
 
 							</div>
+						</div>
 
-
-							<div class="form-group col-md-4">
-								<label class="mb-1">Shop Number: <span class="text-danger" style="font-size: 15px;">*</span></label>
-								<input type="text" name="shop_number" class="form-control"  required="" autocomplete="off" required="" value="{{ $sales->shop_number }}">
-								
-
-							</div>
 
 
 
@@ -201,25 +206,10 @@
 					</div>
 
 
-		{{-- 			<div class="form-group col-md-3">
-						<label class="mb-1">Transport Cost:</label>
-						<div class="input-group mb-2">
+					<input type="hidden" id="transport_cost" name="transport_cost" class="form-control" onkeyup="calculatediscount();" value="0" autocomplete="off" required="">
 
-							<input type="text" id="transport_cost" name="transport_cost" class="form-control" onkeyup="calculatediscount();" value="0" autocomplete="off" required="">
-
-						</div>
-					</div>
-
-
-					<div class="form-group col-md-3">
-						<label class="mb-1">Other Cost:</label>
-						<div class="input-group mb-2">
-
-							<input type="text" id="dsr_cost" name="dsr_cost" class="form-control" onkeyup="calculatediscount();" value="0" autocomplete="off" required="">
-
-						</div>
-					</div>
- --}}
+					<input type="hidden" id="dsr_cost" name="dsr_cost" class="form-control" onkeyup="calculatediscount();" value="0" autocomplete="off" required="">
+					
 
 
 					<div class="form-group col-md-3">

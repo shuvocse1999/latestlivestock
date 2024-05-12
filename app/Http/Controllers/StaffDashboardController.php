@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Staff;
 use App\Models\Product;
+use App\Models\Shop;
 use Session;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
@@ -79,6 +80,7 @@ class StaffDashboardController extends Controller
 		$data['category'] = Category::get();
 		$data['brand']    = Brand::get();
 		$data['product']  = Product::get();
+		$data['shop']  = Shop::get();
 
 		return view("backend.staffdashboard.dsrsales.create",$data);
 
@@ -204,7 +206,7 @@ class StaffDashboardController extends Controller
 		->where('session_id',$session_id)
 		->get();
 
-		$invoice_no = IdGenerator::generate(['table' => 'sales_ledger', 'field'=>'invoice_no','length' => 10, 'prefix' =>'DSI-']);
+		$invoice_no = IdGenerator::generate(['table' => 'dsrsales_ledger', 'field'=>'invoice_no','length' => 10, 'prefix' =>'DSI-']);
 
 
 		foreach ($data as $d) {
@@ -265,8 +267,8 @@ class StaffDashboardController extends Controller
 			'staff_id'         => Auth('guest')->user()->id,
 			'invoice_date'     => $request->invoice_date,
 			'invoice_no'       => $invoice_no,
-			'shop_name'        => $request->shop_name,
-			'shop_number'      => $request->shop_number,
+			'shop_id'          => $request->shop_id,
+			'shop_number'      => " ",
 			'market'           => $request->market,
 			'total'            => $request->totalamount,
 			'discount'         => $request->discount,
@@ -285,6 +287,7 @@ class StaffDashboardController extends Controller
 		DB::table("dsrsales_payment")->insert([
 			'invoice_no'       => $invoice_no,
 			'staff_id'         => Auth('guest')->user()->id,
+			'shop_id'          => $request->shop_id,
 			'payment_date'     => $request->invoice_date,
 			'payment'          => $request->paid,
 			'discount'         => $request->discount,
@@ -303,7 +306,7 @@ class StaffDashboardController extends Controller
 
 		$id = DB::table("dsrsales_ledger")->where('invoice_no',$invoice_no)->first();
 
-		return response()->json($id->id);
+		return redirect('/pendingalldsrsalesledger');
 
 
 	}
@@ -328,7 +331,7 @@ class StaffDashboardController extends Controller
 
 			$data['category'] = Category::get();
 			$data['brand']    = Brand::get();
-			$data['staff']    = Staff::get();
+			$data['shop']    = Shop::get();
 			$data['product']  = Product::get();
 
 			return view("backend.staffdashboard.dsrsales.dsreditsales",$data);
@@ -372,8 +375,8 @@ class StaffDashboardController extends Controller
 				'staff_id'         => Auth('guest')->user()->id,
 				'invoice_date'     => $request->invoice_date,
 				'invoice_no'       => $invoice_no,
-				'shop_name'        => $request->shop_name,
-				'shop_number'      => $request->shop_number,
+				'shop_id'          => $request->shop_id,
+				'shop_number'      => " ",
 				'market'           => $request->market,
 				'total'            => $request->totalamount,
 				'discount'         => $request->discount,
@@ -395,8 +398,8 @@ class StaffDashboardController extends Controller
 				'staff_id'         => Auth('guest')->user()->id,
 				'invoice_date'     => $request->invoice_date,
 				'invoice_no'       => $invoice_no,
-				'shop_name'        => $request->shop_name,
-				'shop_number'      => $request->shop_number,
+				'shop_id'          => $request->shop_id,
+				'shop_number'      => " ",
 				'total'            => $request->totalamount,
 				'discount'         => $request->discount,
 				'transport_cost'   => $request->transport_cost,
@@ -417,6 +420,7 @@ class StaffDashboardController extends Controller
 
 		DB::table("dsrsales_payment")->where('invoice_no',$invoice_no)->update([
 			'invoice_no'       => $invoice_no,
+			'shop_id'          => $request->shop_id,
 			'staff_id'         => Auth('guest')->user()->id,
 			'payment_date'     => $request->invoice_date,
 			'payment'          => $request->paid,
@@ -444,7 +448,8 @@ class StaffDashboardController extends Controller
 		$data = DB::table('dsrsales_ledger')
 		->where("dsrsales_ledger.invoice_no",$invoice_no)
 		->join("staff",'staff.id','dsrsales_ledger.staff_id')
-		->select("dsrsales_ledger.*",'staff.staff_name')
+		->join("shops",'shops.id','dsrsales_ledger.shop_id')
+		->select("dsrsales_ledger.*",'staff.staff_name','shops.shop_name','shops.shop_number','shops.shop_address')
 		->first();
 
 		$product = DB::table("dsrsales_entry")
@@ -465,7 +470,8 @@ class StaffDashboardController extends Controller
 		$data = DB::table('dsrsales_ledger')
 		->where("dsrsales_ledger.invoice_no",$invoice_no)
 		->join("staff",'staff.id','dsrsales_ledger.staff_id')
-		->select("dsrsales_ledger.*",'staff.staff_name')
+		->join("shops",'shops.id','dsrsales_ledger.shop_id')
+		->select("dsrsales_ledger.*",'staff.staff_name','shops.shop_name','shops.shop_number','shops.shop_address')
 		->first();
 
 		$product = DB::table("dsrsales_entry")

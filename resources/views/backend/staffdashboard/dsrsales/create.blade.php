@@ -19,7 +19,7 @@
 						<div class="col-md-12 p-0 row">
 
 
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-4">
 								<label class="mb-1">Date:<span class="text-danger" style="font-size: 15px;">*</span></label>
 								<div class="input-group mb-2">
 
@@ -30,20 +30,25 @@
 
 
 
-							<div class="form-group col-md-5">
-								<label class="mb-1">Shop Name: <span class="text-danger" style="font-size: 15px;">*</span></label>
-								<input type="text" name="shop_name" class="form-control"  required="" autocomplete="off" required="">
-								
+							<div class="form-group col-md-8">
+								<label class="mb-1">Shop Name: </label>
+								<div class="input-group mb-2">
+									<select class="form-control myselect" name="shop_id" id=
+									"shop_id">
+
+									<option value="">- - - - -</option>
+
+									@foreach($shop as $s)
+									<option value="{{ $s->id }}">{{ $s->shop_name }} - {{ $s->shop_number }}</option>
+									@endforeach
+
+
+								</select>
 
 							</div>
+						</div>
 
 
-							<div class="form-group col-md-4">
-								<label class="mb-1">Shop Number: <span class="text-danger" style="font-size: 15px;">*</span></label>
-								<input type="text" name="shop_number" class="form-control"  required="" autocomplete="off" required="">
-								
-
-							</div>
 {{-- 
 
 
@@ -898,7 +903,7 @@
 
 			success:function(response){
 
-				window.open('{{URL::to('/editdsrsales')}}'+'/'+response);
+				window.open('{{URL::to('/pendingalldsrsalesledger')}}');
 				location.reload();
 
 				$("#loading").hide();

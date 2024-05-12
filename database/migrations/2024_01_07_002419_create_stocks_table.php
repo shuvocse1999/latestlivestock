@@ -27,6 +27,7 @@ return new class extends Migration
             $table->double("damage",11,2)->nullable();
             $table->double("purchase_price",11,2)->nullable();
             $table->double("sales_price",11,2)->nullable();
+            $table->string('dsr_id')->nullable();
             $table->string('admin_id')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();

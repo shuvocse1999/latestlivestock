@@ -21,9 +21,10 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 
   <table class="table table-bordered w-100">
     <tr class="bg-light">
-      <td colspan="11" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold;"><b>{{ $data->shop_name }}<br>{{ $data->shop_number }}<br>Sales Invoice</b><br>DSR: {{ $data->staff_name }}</td> 
-    </tr>
-    <tr class="text-center">
+     <td colspan="11" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold;"><b>{{ $data->shop_name }}<br>{{ $data->shop_number }}<br>{{ $data->shop_address }}<br>Sales Invoice</b><br>DSR: {{ $data->staff_name }}</td> 
+     
+   </tr>
+   <tr class="text-center">
      <td colspan="12">
       Date : {{ date('d M Y',strtotime($data->invoice_date)) }}<br>
       Invoice No : <b>{{ $data->invoice_no }}</b> <br>
@@ -129,13 +130,13 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
   </div>
   <div class="col-4" style="text-align:center;">
    <br>
-    --------------------<br>
-    Prepared By
-  </div>
-  <div class="col-4" style="text-align:right;">
-    --------------------<br>
-    Authorized  Signature
-  </div>
+   --------------------<br>
+   Prepared By
+ </div>
+ <div class="col-4" style="text-align:right;">
+  --------------------<br>
+  Authorized  Signature
+</div>
 </div>
 <br>
 <center><span style="font-size: 13px; color: gray;">Developer By SoftwarefarmBD. <br>Phone: 01788283580</span></center>
@@ -149,13 +150,13 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 <style type="text/css">
   
 
-      .table-bordered td{
-        border: 1px solid gray !important;
-      }
+  .table-bordered td{
+    border: 1px solid gray !important;
+  }
 
-      .table-bordered th{
-        border: 1px solid gray !important;
-      }
+  .table-bordered th{
+    border: 1px solid gray !important;
+  }
 </style>
 
 

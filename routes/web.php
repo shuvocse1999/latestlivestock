@@ -18,6 +18,8 @@ use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\DamageController;
 use App\Http\Controllers\StaffLoginController;
 use App\Http\Controllers\StaffDashboardController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShoppaymentController;
 
 
 
@@ -60,6 +62,23 @@ Route::get("pendingalldsrsalesledger",[StaffDashboardController::class,'pendinga
 // Stocks
 
 Route::get("dsrstocks",[StaffDashboardController::class,'dsrstocks']);
+
+
+
+// Shop
+
+
+Route::resource('shop', ShopController::class);
+Route::get('deleteshop/{id}', [ShopController::class, 'destroy']);
+
+
+// Shop Payment
+
+Route::get("shoppayment",[ShoppaymentController::class,'create']);
+Route::get("getshopdue/{shop_id}",[ShoppaymentController::class,'getshopdue']);
+Route::post("shoppaymententry",[ShoppaymentController::class,'shoppaymententry']);
+Route::get("allshoppayment",[ShoppaymentController::class,'index']);
+Route::get("deleteshoppayment/{id}",[ShoppaymentController::class,'deleteshoppayment']);
 
 
 
