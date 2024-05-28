@@ -305,7 +305,7 @@
             </a>
             <ul aria-expanded="false">
                 <li><a href="{{ route('admin.create')}}">Add New</a></li>
-                <li><a href="{{ route('admin.index')}}">Manage Admin</a></li>
+                <li><a href="{{ route('admin.index')}}">Manage Admins</a></li>
             </ul>
         </li>
 
