@@ -185,7 +185,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ url('dsrsales')}}">Sales</a></li>
-                            <li><a href="{{ url('pendingalldsrsalesledger')}}">Pending Sales</a></li>
+                            <li><a href="{{ url('pendingalldsrsalesledger')}}">Advanced Sales</a></li>
                             <li><a href="{{ url('alldsrsalesledger')}}">Final Sales</a></li>
                         </ul>
                     </li>

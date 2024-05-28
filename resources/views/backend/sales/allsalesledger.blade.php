@@ -50,8 +50,8 @@
 											
 												<a class="dropdown-item p-2" href="{{ url("finalsalesinvoice/".$d->invoice_no) }}" target="blank">Final Invoice</a>
 
-
-								
+													<a class="dropdown-item p-2" href="{{ url("editsales/".$d->id) }}">Edit</a>
+										
 												
 												<a class="dropdown-item p-2" href="{{ url("deletesalesledger/".$d->id) }}" onclick="return confirm('Are you sure?')">Delete</a>
 

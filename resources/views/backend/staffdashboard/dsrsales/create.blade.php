@@ -30,7 +30,7 @@
 
 
 
-							<div class="form-group col-md-8">
+							<div class="form-group col-md-6">
 								<label class="mb-1">Shop Name: </label>
 								<div class="input-group mb-2">
 									<select class="form-control myselect" name="shop_id" id=
@@ -47,6 +47,24 @@
 
 							</div>
 						</div>
+
+
+						<div class="form-group col-md-2">
+							<label class="mb-1">Type: </label>
+							<div class="input-group mb-2">
+								<select class="form-control myselect" name="salestype" id=
+								"salestype">
+
+								<option value="0">Regular</option>
+								<option value="1">Advanced</option>
+
+							
+
+
+							</select>
+
+						</div>
+					</div>
 
 
 {{-- 
@@ -130,34 +148,29 @@
 				</div>
 
 
-				<div class="col-md-12 p-0">
-					<table class="table table-bordered">
-						<thead class="bg-primary text-white text-center">
-							<tr>
-								<th width="50">SL</th>
-								<th width="150">Product</th>
-								<th width="120">Carton/Piece</th>
-								<th width="80">Free</th>
-								<th width="80">Price</th>
-								<th width="100">Total</th>
+				<table class="table table-bordered">
+					<thead class="bg-primary text-white text-center">
+						<tr>
+							<th>SL</th>
+							<th>Product</th>
+							<th>Carton/Piece</th>
+							<th>Free</th>
+							<th>Price</th>
+							<th>Total</th>
+							<th>Action</th>
 
 
-							</tr>
-						</thead>
-					</table>
-				</div>
+						</tr>
+					</thead>
 
 
-				<div class="col-md-12 p-0">
-					<table class="table">
 
-						<tbody id="showdata">
+					<tbody id="showdata">
 
-						</tbody>
-					</table>
-				</div>
+					</tbody>
 
 
+				</table>
 
 
 			</div>
@@ -165,12 +178,13 @@
 
 
 
-			<div class="col-md-12">
+			
+			<div class="col-md-12 mt-5">
 				<div class="ibox-head myhead2 p-0">
 					<div class="ibox-title2 bg-primary p-2 text-white"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Account</div>
 				</div>
 
-				<div class="col-md-12 p-0 mt-3 row">
+				<div class="col-md-12 row mt-4 p-0">
 
 
 
@@ -178,7 +192,7 @@
 						<label class="mb-1">Sub Total:</label>
 						<div class="input-group mb-2">
 
-							<input type="text" id="totalamount" name="totalamount" class="form-control"  readonly="">
+							<input type="text" id="totalamount" name="totalamount" class="form-control"  readonly="" >
 
 						</div>
 					</div>
@@ -186,58 +200,37 @@
 
 
 
-					
-
 					<div class="form-group col-md-3">
 						<label class="mb-1">Discount:</label>
 						<div class="input-group mb-2">
-							<input type="text" id="discount" name="discount" class="form-control" placeholder="Discount" onkeyup="calculatediscount();" value="0" autocomplete="off">
-							
+
+							<input type="text" id="discount" name="discount" class="form-control" placeholder="Discount" onkeyup="calculatediscount();" autocomplete="off" value="0">
+
 						</div>
 					</div>
 
 
 					<input type="hidden" id="transport_cost" name="transport_cost" class="form-control" onkeyup="calculatediscount();" value="0" autocomplete="off" required="">
 
-					<div class="form-group col-md-3 d-none">
-						<label class="mb-1">Transport Cost:</label>
-						<div class="input-group mb-2">
-
-							
-
-						</div>
-					</div>
-
-
 					<input type="hidden" id="dsr_cost" name="dsr_cost" class="form-control" onkeyup="calculatediscount();" value="0" autocomplete="off" required="">
-
-					<div class="form-group col-md-3 d-none">
-						<label class="mb-1">DSR Cost:</label>
-						<div class="input-group mb-2">
-
-							
-
-						</div>
-					</div>
-
+					
 
 
 					<div class="form-group col-md-3">
 						<label class="mb-1">Grand Total:</label>
 						<div class="input-group mb-2">
 
-							<input type="text" id="grandtotal" name="grandtotal" class="form-control"  readonly="">
+							<input type="text" id="grandtotal" name="grandtotal"  class="form-control"  readonly="">
 
 						</div>
 					</div>
 
-					<input type="hidden" id="paid" name="paid" class="form-control" onkeyup="return paidcalculated();">
 
-					<div class="form-group col-md-3 d-none">
+					<div class="form-group col-md-3">
 						<label class="mb-1">Paid:</label>
 						<div class="input-group mb-2">
 
-							
+							<input type="text" id="paid" name="paid" class="form-control" onkeyup="return paidcalculated();">
 
 						</div>
 					</div>
@@ -903,7 +896,8 @@
 
 			success:function(response){
 
-				window.open('{{URL::to('/pendingalldsrsalesledger')}}');
+
+				window.open('{{URL::to('/finaldsrsalesinvoice')}}'+'/'+response, "blank");
 				location.reload();
 
 				$("#loading").hide();

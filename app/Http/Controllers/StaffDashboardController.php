@@ -263,25 +263,52 @@ class StaffDashboardController extends Controller
 		}  
 
 
-		DB::table("dsrsales_ledger")->insert([
-			'staff_id'         => Auth('guest')->user()->id,
-			'invoice_date'     => $request->invoice_date,
-			'invoice_no'       => $invoice_no,
-			'shop_id'          => $request->shop_id,
-			'shop_number'      => " ",
-			'market'           => $request->market,
-			'total'            => $request->totalamount,
-			'discount'         => $request->discount,
-			'transport_cost'   => $request->transport_cost,
-			'dsr_cost'         => $request->dsr_cost,
-			'grandtotal'       => $request->grandtotal,
-			'paid'             => $request->paid,
-			'due'              => $request->due,
-			'transaction_type' => $request->transaction_type,
-			'admin_id'         => "",
-			'created_at'       => now(),
+		if ($request->salestype == 0) {
+			DB::table("dsrsales_ledger")->insert([
+				'staff_id'         => Auth('guest')->user()->id,
+				'invoice_date'     => $request->invoice_date,
+				'invoice_no'       => $invoice_no,
+				'shop_id'          => $request->shop_id,
+				'shop_number'      => " ",
+				'market'           => $request->market,
+				'total'            => $request->totalamount,
+				'discount'         => $request->discount,
+				'transport_cost'   => $request->transport_cost,
+				'dsr_cost'         => $request->dsr_cost,
+				'grandtotal'       => $request->grandtotal,
+				'paid'             => $request->paid,
+				'due'              => $request->due,
+				'transaction_type' => $request->transaction_type,
+				'status'           => "1",
+				'admin_id'         => "",
+				'created_at'       => now(),
 
-		]);
+			]);
+		}else{
+
+			DB::table("dsrsales_ledger")->insert([
+				'staff_id'         => Auth('guest')->user()->id,
+				'invoice_date'     => $request->invoice_date,
+				'invoice_no'       => $invoice_no,
+				'shop_id'          => $request->shop_id,
+				'shop_number'      => " ",
+				'market'           => $request->market,
+				'total'            => $request->totalamount,
+				'discount'         => $request->discount,
+				'transport_cost'   => $request->transport_cost,
+				'dsr_cost'         => $request->dsr_cost,
+				'grandtotal'       => $request->grandtotal,
+				'paid'             => $request->paid,
+				'due'              => $request->due,
+				'transaction_type' => $request->transaction_type,
+				'admin_id'         => "",
+				'created_at'       => now(),
+				]);
+
+		}
+
+
+		
 
 
 		DB::table("dsrsales_payment")->insert([
@@ -304,9 +331,7 @@ class StaffDashboardController extends Controller
 		DB::table('sales_current')->where('session_id',$session_id)->delete();
 		Session::regenerate();
 
-		$id = DB::table("dsrsales_ledger")->where('invoice_no',$invoice_no)->first();
-
-		return redirect('/pendingalldsrsalesledger');
+		return response()->json($invoice_no);
 
 
 	}
@@ -522,6 +547,58 @@ class StaffDashboardController extends Controller
 
 		return view("backend.staffdashboard.dsrstock.index",$data);
 	}
+
+
+
+
+
+	public function deletedsrsalescartproduct($id){
+
+		$session_id   = Session::getId();
+		$data = DB::table('sales_current')
+		->where('session_id',$session_id)
+		->where('id',$id)
+		->delete();
+
+	}
+
+
+
+	public function deletedsrsalesledger($id){
+
+		$data = DB::table('dsrsales_ledger')
+		->where("id",$id)
+		->first();
+
+
+		DB::table('dsrsales_ledger')
+		->where("id",$id)
+		->delete();
+
+		DB::table("dsrsales_entry")
+		->where("invoice_no",$data->invoice_no)
+		->delete();
+
+		DB::table("dsrsales_payment")
+		->where("invoice_no",$data->invoice_no)
+		->delete();
+
+
+		DB::table("dsrstocks")
+		->where("invoice_no",$data->invoice_no)
+		->delete();
+
+
+
+		$notification=array(
+			'messege'=>'Invoice Delete Done',
+			'alert-type'=>'success'
+		);
+		return Redirect()->back()->with($notification); 
+
+
+	}
+
 
 
 	

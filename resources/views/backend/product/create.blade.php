@@ -34,14 +34,14 @@
 
 
 
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-8">
 								<label>Product Name <span class="text-danger">*</span></label>
 								<input type="text" name="product_name" class="form-control" required="">
 							</div>
 
 
 
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-4">
 								<label>Category <span class="text-danger">*</span></label>
 								<select class="form-control" name="category_id" required="">
 									<option value="">- - - - -</option>
@@ -51,7 +51,9 @@
 								</select>
 							</div>
 
+							<input type="hidden" name="brand_id" value="1">
 
+{{-- 
 							<div class="form-group col-md-3">
 								<label>Brand <span class="text-danger">*</span></label>
 								<select class="form-control" name="brand_id" required="">
@@ -61,18 +63,21 @@
 									@endforeach
 								</select>
 							</div>
-
+ --}}
 
 
 							<div class="form-group col-md-3">
 								<label>Group Unit <span class="text-danger">*</span></label>
 								<select class="form-control" name="group_unit" required="">
 									<option value="">- - - - -</option>
-									<option value="Carton">Carton</option>
-									<option value="Jar">Jar</option>
-									<option value="Dozen">Dozen</option>
-									<option value="Packet">Packet</option>
-									<option value="Box">Box</option>
+									<option value="CARTON">CARTON</option>
+									<option value="DOZEN">DOZEN</option>
+									<option value="PCS">PCS</option>
+									<option value="BOX">BOX</option>
+									<option value="KG">KG</option>
+									<option value="BAG">BAG</option>
+									<option value="PACKET">PACKET</option>
+
 									
 								</select>
 							</div>
@@ -87,10 +92,14 @@
 								<label>Single Unit <span class="text-danger">*</span></label>
 								<select class="form-control" name="single_unit" required="">
 									<option value="">- - - - -</option>
-									<option value="Piece">Piece</option>
-									<option value="Packet">Packet</option>
+									<option value="CARTON">CARTON</option>
+									<option value="DOZEN">DOZEN</option>
+									<option value="PCS">PCS</option>
+									<option value="BOX">BOX</option>
 									<option value="KG">KG</option>
-									<option value="Bucket">Bucket</option>
+									<option value="BAG">BAG</option>
+									<option value="PACKET">PACKET</option>
+
 									
 								</select>
 							</div>

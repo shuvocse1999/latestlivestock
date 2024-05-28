@@ -92,8 +92,11 @@
 							<div class="input-group mb-2">
 								<select class="form-control" name="payment_type" id="payment_type">
 									<option value="Cash">Cash</option>
+									<option value="CHQ">CHQ</option>
 									<option value="Bank">Bank</option>
 									<option value="Mobile Banking">Mobile Banking</option>
+
+									
 
 								</select>
 

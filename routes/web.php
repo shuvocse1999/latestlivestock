@@ -44,10 +44,15 @@ Route::get("dsrpurchaseinvoice/{invoice_no}",[StaffDashboardController::class,'d
 
 Route::get("showdsrsalescurrentcart",[StaffDashboardController::class,'showdsrsalescurrentcart']);
 Route::get("salesdsrcurrentcart/{id}",[StaffDashboardController::class,'salesdsrcurrentcart']);
+Route::get("deletedsrsalescartproduct/{id}",[StaffDashboardController::class,'deletedsrsalescartproduct']);
 Route::get("dsrsalescartonupdate/{id}",[StaffDashboardController::class,'dsrsalescartonupdate']);
 Route::get("dsrsalespieceupdate/{id}",[StaffDashboardController::class,'dsrsalespieceupdate']);
 Route::get("dsrsalespriceupdate/{id}",[StaffDashboardController::class,'dsrsalespriceupdate']);
 Route::post("dsrsalesledger",[StaffDashboardController::class,'dsrsalesledger']);
+
+Route::get("deletedsrsalesledger/{id}",[StaffDashboardController::class,'deletedsrsalesledger']);
+
+
 Route::get("editdsrsales/{id}",[StaffDashboardController::class,'dsreditsales']);
 Route::get("showeditdsrsalescurrentcart/{invoice_no}",[StaffDashboardController::class,'showeditdsrsalescurrentcart']);
 Route::post("editdsrsalesledger/{invoice_no}",[StaffDashboardController::class,'editdsrsalesledger']);

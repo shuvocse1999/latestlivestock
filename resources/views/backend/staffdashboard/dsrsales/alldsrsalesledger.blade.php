@@ -49,7 +49,7 @@
 											
 												<a class="dropdown-item p-2" href="{{ url("finaldsrsalesinvoice/".$d->invoice_no) }}" target="blank">Final Invoice</a>
 
-										{{-- 		<a class="dropdown-item p-2" href="{{ url("deletesalesledger/".$d->id) }}" onclick="return confirm('Are you sure?')">Delete</a> --}}
+												<a class="dropdown-item p-2" href="{{ url("deletedsrsalesledger/".$d->id) }}" onclick="return confirm('Are you sure?')">Delete</a>
 
 											
 

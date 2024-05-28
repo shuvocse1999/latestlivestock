@@ -52,8 +52,10 @@
 								</select>
 							</div>
 
+							<input type="hidden" name="brand_id" value="1">
 
-							<div class="form-group col-md-3">
+
+						{{-- 	<div class="form-group col-md-3">
 								<label>Brand <span class="text-danger">*</span></label>
 								<select class="form-control" name="brand_id" required="">
 									<option value="">- - - - -</option>
@@ -62,7 +64,7 @@
 									@endforeach
 								</select>
 							</div>
-
+ --}}
 
 
 							<div class="form-group col-md-3">

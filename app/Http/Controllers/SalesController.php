@@ -528,16 +528,6 @@ class SalesController extends Controller
 		$data['sales'] = DB::table("sales_ledger")->where("id",$id)->first();
 
 
-		if ($data['sales']->status == "1") {
-
-			$notification=array(
-				'messege'=>'Invoice Confirm Done',
-				'alert-type'=>'success'
-			);
-			return Redirect()->back()->with($notification); 
-
-			
-		}else{
 
 			$data['category'] = Category::get();
 			$data['brand']    = Brand::get();
@@ -545,12 +535,6 @@ class SalesController extends Controller
 			$data['product']  = Product::get();
 
 			return view("backend.sales.editsales",$data);
-
-			
-
-
-		}
-
 		
 	}
 

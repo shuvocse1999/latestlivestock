@@ -21,7 +21,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 
   <table class="table table-bordered w-100">
     <tr class="bg-light">
-      <td colspan="11" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold;"><b>Didar Enterprise Limited - Olympic<br>Pending Sales Invoice</b><br>DSR: {{ $data->staff_name }}</td> 
+      <td colspan="11" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold;"><b>Pending Sales Invoice</b><br>DSR: {{ $data->staff_name }}</td> 
     </tr>
     <tr class="text-center">
      <td colspan="12">
@@ -184,9 +184,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
     Authorized  Signature
   </div>
 </div>
-<br>
-<center><span style="font-size: 13px; color: gray;">Developer By SoftwarefarmBD. <br>Phone: 01788283580</span></center>
-<br>
+
 <center><a href="#" class="btn btn-danger btn-sm print w-10" onclick="window.print();">Print</a></center>
 <br>
 

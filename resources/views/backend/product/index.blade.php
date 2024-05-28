@@ -17,7 +17,6 @@
 									<th>SL.</th>
 									<th>Product</th>
 									<th>Category</th>
-									<th>Brand</th>
 									<th>Measurement</th>
 									
 									<th>Purchase</th>
@@ -34,7 +33,6 @@
 									<td>{{ $i++ }}</td>
 									<th>{{ $d->product_name }}</th>
 									<td>{{ $d->category_name }}</td>
-									<td>{{ $d->brand_name }}</td>
 									<td>{{ $d->group_unit }}<br>{{ $d->unit_per_group }} {{ $d->single_unit }}</td>
 									
 									<td>{{ $d->purchase_price }}/-</td>

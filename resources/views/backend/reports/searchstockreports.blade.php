@@ -21,8 +21,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 
 	<table class="table table-bordered w-100">
 		<tr class="bg-light">
-			<td colspan="7" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold; letter-spacing: 1px; padding: 10px;"><b>Didar Enterprise Limited - Olympic
-				<br>Stock Reports</b>
+			<td colspan="7" style="text-align:center;font-size: 15px;text-transform: capitalize;font-weight: bold; letter-spacing: 1px; padding: 10px;">Stock Reports</b>
 				<br>
 				@if($to_date != null) {{ date('d M Y',strtotime($startdate)) }} @endif @if($to_date != null)- - - {{ date('d M Y',strtotime($to_date)) }} @endif
 
@@ -153,7 +152,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 					<td>{{ $recievecartons }} : {{ $recieveremainingPieces }}</td>
 					<td>{{ $finalsalescartons }} : {{ $finalsalesremainingPieces }}</td>
 					<th>{{ $availablefree }} P</th>
-					<td class="font-weight-bold">{{ $availablecartons }} : {{ $availableremainingPieces }}</td>
+					<td class="font-weight-bold">{{ $pieces }}P<br>{{ $availablecartons }} : {{ $availableremainingPieces }}</td>
 				</tr>
 
 			
@@ -213,9 +212,9 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 				Authorized  Signature
 			</div>
 		</div>
+
 		<br>
-		<center><span style="font-size: 13px; color: gray;">Developer By SoftwarefarmBD. <br>Phone: 01788283580</span></center>
-		<br>
+
 		<center><a href="#" class="btn btn-danger btn-sm print w-10" onclick="window.print();">Print</a></center>
 		<br>
 

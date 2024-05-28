@@ -118,7 +118,7 @@
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
                     </div>
 
-                    <b class="text-primary text-uppercase" style="font-size: 16px;">Didar Olympic Dealership</b>
+                
                 </div>
 
 
@@ -245,7 +245,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ url('stockreports')}}">Stock Reports</a></li>
                             <li><a href="{{ url('dsrreports')}}">DSR Reports</a></li>
-                            <li><a href="{{ url('profitreports')}}">Profit Reports</a></li>
+                           {{--  <li><a href="{{ url('profitreports')}}">Profit Reports</a></li> --}}
                         </ul>
                     </li>
 
@@ -287,7 +287,7 @@
                 </a>
                 <ul aria-expanded="false">
                   <li><a href="{{ route('category.index')}}">Category</a></li>
-                  <li><a href="{{ route('brand.index')}}">Brand</a></li>
+                  {{-- <li><a href="{{ route('brand.index')}}">Brand</a></li> --}}
                   <li><a href="{{ route('product.create')}}">Product</a></li>
                   <li><a href="{{ route('product.index')}}">Manage Product</a></li>
               </ul>
@@ -298,8 +298,7 @@
           <li class="nav-label" style="color:gray;">Setting</li>
 
 
-         @if(Auth::user()->type == 1)
-
+      
           <li>
             <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                 <i class="icon-grid menu-icon"></i><span class="nav-text">Admin Info.</span>
@@ -309,8 +308,6 @@
                 <li><a href="{{ route('admin.index')}}">Manage Admin</a></li>
             </ul>
         </li>
-
-        @endif
 
 
 

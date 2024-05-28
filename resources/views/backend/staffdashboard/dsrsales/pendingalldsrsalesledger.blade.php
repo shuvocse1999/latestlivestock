@@ -8,7 +8,7 @@
 		<div class="col-12">
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title"><a href="{{ url('dashboard') }}" class="text-primary"><i class="fa fa-home"></i></a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;Pending Sales</h4>
+					<h4 class="card-title"><a href="{{ url('dashboard') }}" class="text-primary"><i class="fa fa-home"></i></a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;Advanced Sales</h4>
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered zero-configuration">
 							<thead>
@@ -50,8 +50,8 @@
 												
 												<a class="dropdown-item p-2" href="{{ url("dsrsalesinvoice/".$d->invoice_no) }}" target="blank">Pending Invoice</a>
 												
-											{{-- 	
-												<a class="dropdown-item p-2" href="{{ url("deletedsrsalesledger/".$d->id) }}" onclick="return confirm('Are you sure?')">Delete</a> --}}
+												
+												<a class="dropdown-item p-2" href="{{ url("deletedsrsalesledger/".$d->id) }}" onclick="return confirm('Are you sure?')">Delete</a>
 
 
 											</div>

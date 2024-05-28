@@ -20,7 +20,7 @@
 						<div class="col-md-12 p-0 row">
 
 
-							<div class="form-group col-md-2">
+							<div class="form-group col-md-3">
 								<label class="mb-1">Date:<span class="text-danger" style="font-size: 15px;">*</span></label>
 								<div class="input-group mb-2">
 
@@ -31,7 +31,7 @@
 
 
 
-							<div class="form-group col-md-2">
+							<div class="form-group col-md-3">
 								<label class="mb-1">Voucer No:<span class="text-danger" style="font-size: 15px;">*</span></label>
 								<div class="input-group mb-2">
 
@@ -44,7 +44,7 @@
 
 
 
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-4">
 								<label class="mb-1">Supplier Name: <span class="text-danger" style="font-size: 15px;">*</span></label>
 								<div class="input-group mb-2">
 									<select class="form-control myselect" name="supplier_id" id=
@@ -72,7 +72,7 @@
 						</div>
 
 
-						<div class="form-group col-md-3">
+	{{-- 					<div class="form-group col-md-3">
 							<label class="mb-1">Brand Name: </label>
 							<div class="input-group mb-2">
 								<select class="form-control" name="brand_id" id=
@@ -89,7 +89,7 @@
 
 						</div>
 					</div>
-
+ --}}
 
 
 

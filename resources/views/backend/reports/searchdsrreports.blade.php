@@ -23,8 +23,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 
 	<table class="table table-bordered w-100">
 		<tr class="bg-light">
-			<td colspan="11" style="text-align:center;font-size: 14px;text-transform: capitalize;letter-spacing: 1px; padding: 10px;"><b>Didar Enterprise Limited - Olympic
-				<br>DSR Sales Reports</b>
+			<td colspan="11" style="text-align:center;font-size: 14px;text-transform: capitalize;letter-spacing: 1px; padding: 10px;">DSR Sales Reports</b>
 				<br>
 				@if($from_date != null) {{ date('d M Y',strtotime($from_date)) }} @endif @if($to_date != null)- - - {{ date('d M Y',strtotime($to_date)) }} @endif
 
@@ -238,8 +237,7 @@ $numberTransformer = $numberToWords->getNumberTransformer('en');
 				</div>
 			</div>
 			<br>
-			<center><span style="font-size: 13px; color: gray;">Developer By SoftwarefarmBD. <br>Phone: 01788283580</span></center>
-			<br>
+			
 			<center><a href="#" class="btn btn-danger btn-sm print w-10" onclick="window.print();">Print</a></center>
 			<br>
 

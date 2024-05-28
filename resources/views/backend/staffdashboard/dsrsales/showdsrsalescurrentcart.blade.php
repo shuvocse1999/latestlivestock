@@ -53,12 +53,12 @@
 
 
 		<tr id="tr{{ $d->id }}">
-			<td width="50">{{ $i++ }}</td>
-			<td width="150">{{ $d->product_name }}<br> 
+			<td>{{ $i++ }}</td>
+			<td>{{ $d->product_name }}<br> 
 				
 				<span class="btn btn-primary text-white btn-sm">{{ $available }} P = {{ $availablecartons }} : {{ $availableremainingPieces }}</span></td>
 				}
-			<td width="120">
+			<td>
 				
 				<div class="p-2 row">
 					<div class="input-group col-6 p-0">
@@ -80,7 +80,7 @@
 
 
 
-			<td width="80">
+			<td>
 				<div class="input-group">
 					<input type="text" name="free" id="free{{ $d->id }}" class="form-control text-center" value="{{ $d->free }}" onchange="salesfreeupdate('{{ $d->id }}')" readonly="">
 
@@ -95,7 +95,7 @@
 
 
 
-			<td width="80">
+			<td>
 				<div class="input-group">
 					<input type="text" name="price" id="price{{ $d->id }}" class="form-control text-center"  value="{{ $d->sales_price }}" onchange="dsrsalespriceupdate('{{ $d->id }}')">
 					
@@ -106,7 +106,7 @@
 
 
 
-			<td width="100">
+			<td>
 				@php
 				$product = DB::table("products")->where("id",$d->product_id)->first();
 				$piece_price = $d->sales_price/$product->unit_per_group;
@@ -124,6 +124,12 @@
 				</div>
 			</td>
 
+		
+
+
+			<td>
+				<a class="delete btn btn-danger btn-sm  border-0 text-white" data-id="{{ $d->id }}"><i class="fa fa-times" aria-hidden="true"></i></a>
+			</td>
 
 
 

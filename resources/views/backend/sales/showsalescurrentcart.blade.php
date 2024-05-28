@@ -127,6 +127,11 @@
 
 
 
+			<td width="50">
+				<a class="delete btn btn-danger btn-sm  border-0 text-white" data-id="{{ $d->id }}"><i class="fa fa-times" aria-hidden="true"></i></a>
+			</td>
+
+
 		
 		</tr>
 
