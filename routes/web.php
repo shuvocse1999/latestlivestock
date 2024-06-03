@@ -236,4 +236,6 @@ Route::get("searchprofitreports",[ReportsController::class,'searchprofitreports'
 
 Route::get('/downloaddatabase', [DatabaseController::class,'download']);
 
+Route::get("dsrstockreportsbyadmin",[ReportsController::class,'dsrstockreportsbyadmin']);
+Route::get("searchdsrstockreportsbyadmin",[ReportsController::class,'searchdsrstockreportsbyadmin']);
 

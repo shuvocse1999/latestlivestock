@@ -103,7 +103,7 @@
                     <b class="logo-abbr text-white">D</b>
                     <span class="logo-compact"></span>
                     <span class="brand-title">
-                        <h4 style="color: #fff;" class="text-uppercase"><b>Dashboard</b></h4>
+                        <h4 style="color: #fff;" class="text-uppercase"><b>{{ Auth('guest')->user()->staff_name }}</b></h4>
                     </span>
                 </a>
             </div>

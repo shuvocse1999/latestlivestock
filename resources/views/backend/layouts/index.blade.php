@@ -243,8 +243,9 @@
                             <i class="icon-grid menu-icon"></i><span class="nav-text">Reports</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ url('stockreports')}}">Stock Reports</a></li>
+                            <li><a href="{{ url('stockreports')}}">Total Stock Reports</a></li>
                             <li><a href="{{ url('dsrreports')}}">DSR Reports</a></li>
+                            <li><a href="{{ url('dsrstockreportsbyadmin')}}">DSR Stock Reports</a></li>
                            {{--  <li><a href="{{ url('profitreports')}}">DSR Profit Reports</a></li> --}}
                         </ul>
                     </li>

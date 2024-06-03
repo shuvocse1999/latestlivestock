@@ -269,4 +269,32 @@ class ReportsController extends Controller
 	
 
 
+	public function dsrstockreportsbyadmin(){
+
+		$dsr = DB::table("staff")->get();
+
+		return view("backend.reports.dsrstockreportsbyadmin",compact('dsr'));
+	}
+
+
+
+
+
+
+	public function searchdsrstockreportsbyadmin(Request $r){
+
+		$product = DB::table("products")
+		->get();
+
+		$dsr_id = $r->staff_id;
+		$staff_name = DB::table("staff")->where('id',$r->staff_id)->first();
+
+		return view("backend.reports.searchdsrstockreportsbyadmin",compact('product','dsr_id','staff_name'));
+	}
+
+
+
+	
+
+
 }
