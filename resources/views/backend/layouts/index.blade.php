@@ -245,7 +245,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ url('stockreports')}}">Stock Reports</a></li>
                             <li><a href="{{ url('dsrreports')}}">DSR Reports</a></li>
-                           {{--  <li><a href="{{ url('profitreports')}}">Profit Reports</a></li> --}}
+                           {{--  <li><a href="{{ url('profitreports')}}">DSR Profit Reports</a></li> --}}
                         </ul>
                     </li>
 

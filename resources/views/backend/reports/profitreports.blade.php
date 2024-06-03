@@ -31,6 +31,23 @@
 						<form method="get" class="row" target="blank" action="{{ url("searchprofitreports") }}" enctype="multipart/form-data">
 
 
+							<div class="form-group col-md-3">
+								<label class="mb-1">DSR Name: <span class="text-danger" style="font-size: 15px;">*</span></label>
+								<div class="input-group mb-2">
+									<select class="form-control myselect" name="staff_id" id=
+									"staff_id" required="">
+									<option value="">Select DSR</option>
+									@foreach($dsr as $s)
+									<option value="{{ $s->id }}">{{ $s->staff_name }}</option>
+									@endforeach
+
+
+								</select>
+
+							</div>
+						</div>
+
+
 						<div class="form-group col-md-3">
 							<label>From Date <span class="text-danger">*</span></label>
 							<input type="date" name="from_date" id="from_date" class="form-control" required="">

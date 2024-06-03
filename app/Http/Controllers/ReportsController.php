@@ -188,6 +188,8 @@ class ReportsController extends Controller
 
 	public function profitreports(){
 
+		$dsr = DB::table("staff")->get();
+
 		return view("backend.reports.profitreports");
 	}
 
